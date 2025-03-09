@@ -11,4 +11,15 @@ Add this to your `pubspec.yaml`:
 ```yaml
 dependencies:
   device_uid: ^1.0.0
-# device_uid
+```
+
+# Get Started
+
+``` 
+import 'package:device_uid/device_uid.dart';
+
+void main() {
+  String? deviceId = await DeviceUid.getDeviceId() ?? 'N/A';
+  debugPrint(deviceId);
+}
+```

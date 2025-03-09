@@ -1,6 +1,6 @@
 name: device_uid
 description: A Flutter plugin to retrieve a unique device ID natively without third-party dependencies.
-version: 1.0.1
+version: 1.0.2
 homepage: https://pub.dev/publishers/techlinkmyanmar.com/packages
 repository: https://github.com/thethtwe-dev/device_uid
 

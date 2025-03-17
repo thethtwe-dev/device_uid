@@ -1,3 +1,3 @@
-## 1.0.3
+## 1.0.4
 
-* Update README.md
+* Added Advertising ID and UUID

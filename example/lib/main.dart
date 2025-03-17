@@ -15,17 +15,24 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String mydeviceid = '';
+  String adId = '';
+  String uuID = '';
 
   @override
   void initState() {
     super.initState();
-    getDeviceID();
+    getIds();
   }
 
-  Future getDeviceID() async {
+  Future getIds() async {
     String? deviceId = await DeviceUid.getDeviceId() ?? 'N/A';
+    String? uuid = await DeviceUid.getUUID() ?? 'N/A';
+    String? adid = await DeviceUid.getAdId() ?? 'N/A';
+
     setState(() {
       mydeviceid = deviceId;
+      adId = adid;
+      uuID = uuid;
     });
   }
 
@@ -35,7 +42,16 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(title: const Text('Plugin example app')),
-        body: Center(child: Text('Device ID : $mydeviceid')),
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('Device ID : $mydeviceid\n'),
+              Text('UUID : $uuID\n'),
+              Text('Ad ID : $adId'),
+            ],
+          ),
+        ),
       ),
     );
   }
